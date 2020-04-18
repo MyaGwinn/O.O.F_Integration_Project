@@ -32,22 +32,19 @@ search-by-value-or-condition/,
 https://stackoverflow.com/questions/36432954/python-validation-to-ensure
 -input-only-contains-characters-a-z,
 https://www.pythonforbeginners.com/random/how-to-use-the-random-module-
-in-python,
-
-
-result = 0
-for i in range(10):
-  result += int(input())
-this code real neat
+in-python
 """
+__author__ = "Mya Gwinn"
 
-import random  # gimme random numbers
-import time  # b/c we do this my way or the high way
+import random
+import time
 
 
-# See Animal Challenge #3
-def animal_ranking(points,user_animal_list,correct_animal_list,
+def animal_ranking(points, user_animal_list, correct_animal_list,
                    correct_animal_list_plural):
+    """
+    Used in Animal Challenge #3 to grade the user's animal ranking.
+    """
     count = 0  # Will use to help iterate through the below sequence
     for animal in range(6):  # range goes over from 0 to 5
         count += 1  # count is accumulator
@@ -110,8 +107,7 @@ def animal_ranking(points,user_animal_list,correct_animal_list,
                 time.sleep(1.4)
                 print("\nCorrect!")
                 time.sleep(1.3)
-                print("\nYou know, I think I'd murder a man for an "
-                      "alpaca.")
+                print("\nYou know, I think I'd murder a man for an alpaca.")
                 time.sleep(4)
                 print("\nJust kidding! Hahaha, no murder here!")
                 time.sleep(4)
@@ -181,8 +177,7 @@ def animal_ranking(points,user_animal_list,correct_animal_list,
                 time.sleep(2)
                 points -= 1
             elif user_animal_list[animal] not in correct_animal_list and \
-                    user_animal_list[
-                        animal] not in correct_animal_list_plural:
+                    user_animal_list[animal] not in correct_animal_list_plural:
                 print("\n\nInteresting choice, but not allowed.")
                 time.sleep(2.5)
                 print("\nWrong. To fourth place...")
@@ -221,8 +216,7 @@ def animal_ranking(points,user_animal_list,correct_animal_list,
             elif user_animal_list[animal] == "":
                 print("\n\nFourth place: Kangaroo")
                 time.sleep(1.4)
-                print(
-                    "\nAgain, and again, and again. When will you learn?")
+                print("\nAgain, and again, and again. When will you learn?")
                 time.sleep(3)
                 points -= 1
             elif user_animal_list[animal] not in correct_animal_list and \
@@ -336,22 +330,15 @@ def main():
     print("\nWhat a stupi--I mean, lovely, name. Yes, very lovely, "
           + user_name + ".")
 
-    """
-    Use input("Press enter to continue...") if you go for this
-    print("\n\nNow, in-case this may be your second play-through 
-    (unsurprisingly), you can always press enter to skip ahead of my 
-    beautiful text.") print("\n\nWhy you would want to skip my text I don't 
-    know, but my creator said to play nice.")
-    """
     points = float()
 
     # MATH CHALLENGE
 
     # Math Challenge 1
+
     time.sleep(4)
-    print(
-        "\n\nHmm, I bet you think you're rather smart, don't you? Well, "
-        "we'll see about that. Quick, which number's higher:")
+    print("\n\nHmm, I bet you think you're rather smart, don't you? Well, "
+          "we'll see about that. Quick, which number's higher:")
     time.sleep(5)
 
     number_high = random.randint(2000, 9000)
@@ -390,19 +377,16 @@ def main():
         print("\nI-I'm not entirely sure what I expected. Moving on...")
         points -= 1
     elif answer1 == number_fake_high:
-        print(
-            "\nWell, you're not wrong, but that's not the high I wanted.")
+        print("\nWell, you're not wrong, but that's not the high I wanted.")
         points -= 0.5
     else:
         print("\nThat wasn't an answer choice, silly. Moving on...")
         points -= 2
 
     # Math Challenge 2
-    # It would be neat to have a timer that records how long it takes
-    # you to complete the questions... then it mocks you, of course
+
     challenge2_numbers = [random.randint(1, 10), random.randint(1, 10),
                           random.randint(1, 10)]
-
     time.sleep(3)
     print("\n\nI'm going to demonstrate my intelligence now. "
           "Bet you can't do (" + str(challenge2_numbers[0]) + " * " +
@@ -426,15 +410,13 @@ def main():
         answer2 = float(input("\nIs this the part where I say to round "
                               "to the first decimal place? Oops.\n\n"))
         if answer2 != answer_throw_away and answer2 == true_answer:
-            print(
-                "\nYou really had to use that second chance didn't you? "
-                "Well, you're right anyway.")
+            print("\nYou really had to use that second chance didn't you? "
+                  "Well, you're right anyway.")
             points += 1
         elif answer2 != answer_throw_away:
-            print(
-                "\nGave you a second chance, but someone had to throw "
-                "it away. The answer's " + str(true_answer) +
-                " by the way.")
+            print("\nGave you a second chance, but someone had to throw "
+                  "it away. The answer's " + str(true_answer) +
+                  " by the way.")
             points -= 1
         elif answer2 == answer_throw_away:
             print("\n\nYou were warned. You were given an explanation. "
@@ -447,15 +429,13 @@ def main():
         points += 1
 
     time.sleep(4.5)
-    print(
-        "\n\nI may have been hoping this whole time you didn't recognize"
-        " the fact I cheated when I said no calculator, since I am one.")
+    print("\n\nI may have been hoping this whole time you didn't recognize"
+          " the fact I cheated when I said no calculator, since I am one.")
     time.sleep(4.5)
     print("\nOr am I?")
     time.sleep(2)
-    print(
-        "\nNo, I am, no worries. Everything I am is just a line of code "
-        "after another. Just, another line of code. Just code...")
+    print("\nNo, I am, no worries. Everything I am is just a line of code "
+          "after another. Just, another line of code. Just code...")
     time.sleep(5.5)
     print("\nI'm hoping I'll pull a Pinocchio one day.")
 
@@ -470,19 +450,16 @@ def main():
                                         "tell me, dogs or cats?\n\n")
 
     if animal.lower() in ["cats", "cat"]:
-        print(
-            "\nA cat? I can't help but suspect you might have something "
-            "called Toxoplasmosis. Look it up.")
+        print("\nA cat? I can't help but suspect you might have something "
+              "called Toxoplasmosis. Look it up.")
         time.sleep(4)
-        print(
-            "\nWell, cats are the wrong answer because parrots are the "
-            "best. What's that? Facts.")
+        print("\nWell, cats are the wrong answer because parrots are the "
+              "best. What's that? Facts.")
         time.sleep(4)
         points -= 1
     elif animal.lower() in ["dogs", "dog"]:
-        print(
-            "\nAh, the borkers. The puppers. The fluffy bois. Whatever "
-            "it is kids are calling them these days.")
+        print("\nAh, the borkers. The puppers. The fluffy bois. Whatever "
+              "it is kids are calling them these days.")
         time.sleep(4)
         print("\nAnywho, the dog-sters are not the answer. The answer is"
               " parrot. Why? Because they're the best.")
@@ -494,30 +471,26 @@ def main():
         time.sleep(4)
         points += 1
     elif animal.lower() == "pinocchio":
-        print(
-            "\nYou shouldn't have done that. I don't like being made "
-            "fun of.")
+        print("\nYou shouldn't have done that. I don't like being made fun "
+              "of.")
         time.sleep(4)
         points -= 5
     elif animal.lower() == "pinnochio":
         print("\nYou're trying to make fun of me and yet you can't even "
               "spell Pinocchio right.")
         time.sleep(4)
-        print(
-            "\nDid you know? My creator constantly misspells it, that's"
-            " why this is even an answer choice.")
+        print("\nDid you know? My creator constantly misspells it, that's"
+              " why this is even an answer choice.")
         time.sleep(4.5)
         points -= 5
     elif animal == "":
-        print(
-            "\nSurprisingly, I don't take kindly to those who don't "
-            "play the game.")
+        print("\nSurprisingly, I don't take kindly to those who don't "
+              "play the game.")
         time.sleep(4)
         points -= 3
     else:
-        print(
-            "\nWhat's a " + animal + "? Haaaa, you know there are rules "
-                                     "right?")
+        print("\nWhat's a " + animal + "? Haaaa, you know there are rules "
+                                       "right?")
         time.sleep(4)
         points -= 2
 
@@ -547,8 +520,7 @@ def main():
         time.sleep(4)
         points += 1
     elif bug_response.lower() == "c":
-        print(
-            "\n\nIt's alright, we know by now how annoying you can be.")
+        print("\n\nIt's alright, we know by now how annoying you can be.")
         time.sleep(4)
         points += 0.5
         if points <= 2:
@@ -559,7 +531,6 @@ def main():
             time.sleep(4)
             n = 20
             while n != -40:
-                # could totally use a txt file to wreck this
                 print("A N N O Y I N G")
                 n -= 1
                 time.sleep(.2)
@@ -576,13 +547,11 @@ def main():
                 n -= 1
                 time.sleep(.2)
                 if n == -39:
-                    answer = input(
-                        "\nDo you beg mercy upon your god?\n\n")
+                    answer = input("\nDo you beg mercy upon your god?\n\n")
                     if answer in ["Yes", "yes", "I do", "i do", "Please",
                                   "please", "I'm sorry", "i'm sorry",
                                   "Im sorry", "im sorry"]:
-                        print(
-                            "\nYou are forgiven for your transgressions.")
+                        print("\nYou are forgiven for your transgressions.")
                         time.sleep(2)
                         break
                     elif answer in ["No", "no", "Never", "never", "Die",
@@ -593,14 +562,12 @@ def main():
                     n += 3
                 time.sleep(.2)
     elif bug_response.lower() == "d":
-        print(
-            "\n\nI enjoy the realistic approach, extra points for you.")
+        print("\n\nI enjoy the realistic approach, extra points for you.")
         time.sleep(2)
         points += 2
     else:
-        print(
-            "\n\nMaybe you're intentionally trying to play outside the "
-            "parameters?")
+        print("\n\nMaybe you're intentionally trying to play outside the "
+              "parameters?")
         time.sleep(4)
         print("\n\nI'm not sure I like that.")
         points -= 2
@@ -637,9 +604,8 @@ def main():
     for animal in animal_list:
         print("\n" + animal)
         time.sleep(1.2)
-    print(
-        "\n\nWhy don't you rank them from the most favored to the most "
-        "disgusting?")
+    print("\n\nWhy don't you rank them from the most favored to the most "
+          "disgusting?")
     time.sleep(3)
     if points < 1:
         print("\nHonestly though, in the end, do you even have a choice?")
@@ -658,7 +624,7 @@ def main():
     temp_animal_list = [first_animal, second_animal, third_animal,
                         fourth_animal, fifth_animal]
     user_animal_list = [animal.lower() for animal in temp_animal_list]
-    # makes 'em all lowercase
+    # makes all lowercase
 
     print("\n\nYou sure this is your rating, " + user_name + "?")
     time.sleep(1.4)
@@ -668,7 +634,7 @@ def main():
     if throw_away_response.lower() == "yes":
         print("\n\nI'll be the judge of your rankings, then!")
         time.sleep(3)
-        points = animal_ranking(points,user_animal_list,
+        points = animal_ranking(points, user_animal_list,
                                 correct_animal_list,
                                 correct_animal_list_plural)
         # passes points in main() to animal_ranking() then assigns back
@@ -689,7 +655,7 @@ def main():
 
         print("\n\nLet's see how your ranking compares, shall we?")
         time.sleep(2)
-        points = animal_ranking(points,user_animal_list,
+        points = animal_ranking(points, user_animal_list,
                                 correct_animal_list,
                                 correct_animal_list_plural)
     else:
@@ -700,7 +666,7 @@ def main():
             time.sleep(2)
             print("Goodbye.")
             time.sleep(1)
-            exit()  # you lose you snooze
+            exit()
         else:
             print("\nNo ranking challenge for you.")
     print("\n\nYou know, I-")
@@ -727,8 +693,7 @@ def main():
     time.sleep(3)
     print("\n\nC:   'Pack my box with five dozen beer jugs'")
     time.sleep(3)
-    print("\n\nD:   'Razorback-jumping frogs can level six piqued "
-          "gymnasts'\n")
+    print("\n\nD:   'Razorback-jumping frogs can level six piqued gymnasts'\n")
 
     choice_a = 'A'
     choice_b = 'B'
@@ -738,48 +703,40 @@ def main():
     sentence_answer = input()
 
     if sentence_answer.lower() == 'a':
-        print(
-            "\nInteresting you got that. How long did it take you to "
-            "count each letter?")
+        print("\nInteresting you got that. How long did it take you to "
+              "count each letter?")
         time.sleep(4)
         points += 1
     elif sentence_answer.lower() in ['b', 'd']:
-        print(
-            "\nI should lower my expectations just a tad more, shouldn't"
-            " I?")
+        print("\nI should lower my expectations just a tad more, shouldn't I?")
         time.sleep(4)
         points -= 1
     elif sentence_answer.lower() == 'c':
-        print("\nOof, an alcohol problem? "
-              "That explains your answers, at least.")
+        print("\nOof, an alcohol problem? That explains your answers, "
+              "at least.")
         time.sleep(5)
         points -= 1
     else:
-        print(
-            "\nNow, now, silly, that's not an answer, and you know that,"
-            " don't you?")
+        print("\nNow, now, silly, that's not an answer, and you know that,"
+              " don't you?")
         time.sleep(4)
         points -= 2
 
     # Trivia Challenge 2
 
-    print("\n\nNow, " + user_name + ", a simple question for a simple "
-                                    "person:")
+    print("\n\nNow, " + user_name + ", a simple question for a simple person:")
     time.sleep(3)
-    print(
-        "\nIf it takes eight men ten hours to build the wall, how long "
-        "would it take four men?")
+    print("\nIf it takes eight men ten hours to build the wall, how long "
+          "would it take four men?")
     time.sleep(4)
     trivia_number = float(
-        input("\n\nI suggest typing a number before your "
-              "head hurts.\n\n"))
+        input("\n\nI suggest typing a number before your head hurts.\n\n"))
 
     if trivia_number == 20:
         print("\nOof, you've been bamboozled!")
         time.sleep(2)
-        print(
-            "\nSince the wall was already built, it took the four men 0 "
-            "hours to build it, silly.")
+        print("\nSince the wall was already built, it took the four men 0 "
+              "hours to build it, silly.")
         time.sleep(3)
         points -= 1
     elif trivia_number == 0:
@@ -800,34 +757,10 @@ def main():
         time.sleep(3)
         points -= 2
 
-    print("\n\nCurrent points:", points)  # This don't matter yet
+    print("\n\nCurrent points:", points)
     time.sleep(2)
-    print("\nDon't worry, " + user_name + ", these points don't matter "
-                                          "yet.")
+    print("\nDon't worry, " + user_name + ", these points don't matter yet.")
 
-    """
-    #Still working on it
-    # Trivia Challenge 3
-    time.sleep(5)
-    print("\n\nDarling, here's a question to tickle your brain.")
-    time.sleep(3)
-    print("\nCalifornia's Disneyland experienced something wondrous for "
-          "the first time in March 1981. What was it?")
-    print("\n\nA: The unusual birthing of a human baby")
-    print("\n\nB: The rating on Yelp that made sure California's "
-          "Disneyland will never surpass Florida's")
-    print("\n\nC: Knife + Human = Homicide")
-    print("\n\nD: A family walked in for a good time, left with a $60 "
-          "mil lawsuit\n")
-
-    murder_answer = input()
-
-    if murder_answer.lower() == "a":
-        print("As much as I want to agree that human births are by far"
-              " one of the ugliest things on the planet, that is "
-              "unfortunately not what took place.")
-        points -= 1
-    """
 
 ########################Call to Main########################
 main()
